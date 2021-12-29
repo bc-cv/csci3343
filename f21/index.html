@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>CSCI 3343: Fall 2021</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="src/main.css">
+	<script data-dapp-detection="">!function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();</script></head>
+	<body data-new-gr-c-s-check-loaded="14.1022.0" data-gr-ext-installed="">
+    <style>
+        
+  a {
+      color: #535353;
+  }
+  a.nounderline { 
+      text-decoration: none;
+      decoration: none;
+		  border-bottom: none; 
+  }
+    </style>
+    
+      <div id="wrapper">
+        <header id="header" class="alt" style="width: 100%">
+          <div class="bgimg" style="height: 160px; background: #800000">
+            <div style="height: 30px; width: 100%"></div>
+            <h1><font size="+5">CSCI 3343: Computer Vision</font><div style="height:10px"></div>
+              </h1><h2>
+                <font size="+2">
+                  Instructor:&nbsp;&nbsp;<a href="https://donglaiw.github.io/" class="nounderline">Donglai Wei</a>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  Fall 2021 (MWF 10-10:50 am)  
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  Location: Merkert Center 130
+                </font>
+              </h2>
+          </div>
+				</header>
+        <center>
+          <div style="background: #EEEEEE; height: 7px"></div>
+        </center>
+
+        <!-- Nav -->
+            <nav id="nav">
+                <ul>							
+                    <li><a href="#overview" class="inheritcolor">Overview</a></li> <b>·</b>
+                    <li><a href="#schedule" class="inheritactive">Schedule</a></li> <b>·</b>
+                    <li><a href="#staff" class="inheritcolor">Staff</a></li> <b>·</b>
+                    <li><a href="#syllabus" class="inheritcolor">Course info</a></li> <b>·</b>
+                    <li><a href="https://bostoncollege.instructure.com/courses/1625387" class="inheritcolor">Canvas</a></li> <b>·</b>
+                    <li><a href="https://docs.google.com/document/d/1unjJFWahHPLU6w84o-HWX4htjH9wdJrkWdMaX6R9d-E/edit" class="inheritcolor">Discord</a></li>
+                </ul>
+            </nav>
+
+
+        <!-- Main -->
+            <div id="main">
+            <section id="note" class="main special">
+
+         <!-- Introduction -->
+            <section id="overview" class="main">
+              <center>
+                <header class="major">
+                  <h2>Overview</h2>
+				</header>
+                <div class="spotlight" style="width: 90%; text-align: left">
+                    <div class="content">
+                    <p>CSCI 3343 is an advanced undergraduate-level
+                    computer vision class covering fundamental <b>image basics <font color=#800000>(week 1-3)</font></b>, 
+                    state-of-the-art <b>deep learning <font color=#800000>(week 4-6)</font></b> methods, 
+                    and a wide range of <b>real-world applications <font color=#800000>(week 7-14)</font></b>.
+
+                    <div style="padding-left: 4%; margin-top: -30px">
+                    <ul>
+                        <li>Prerequisites: Maths (Linear Algebra, Multivariate Calculus) and Coding (Python)</li>
+                        <li>Grading: No quizzes/exams. 10 psets (70%) + 1 final project (30%) + extra credits for completing labs (0.5 pt each) </li>
+                        <li>Video resource: <a href="https://www.youtube.com/channel/UCf0WB91t8Ky6AuYcQV0CcLw">computer vision (prof Nayar @Columbia U.)</a>, <a href="https://www.youtube.com/playlist?list=PLoROMvodv4rOABXSygHTsbvUz4G_YQhOb">deep learning (prof. Ng @Stanford U.)</a>, <a href="https://www.youtube.com/playlist?list=PL5-TkQAfAZFbzxjBHtzdVCWE0Zbhomg7r">deep learning for computer vision (prof. Johnson @UMich)</a></li>
+                    </ul>
+                    </div>
+                    </p>         
+                    </div>
+                </div>
+                </center>
+            </section>
+
+
+            <section id="schedule" class="main special">
+              <center>
+                <header class="major">
+                  <h2>Schedule</h2>
+                </header>
+                <div style="margin-top: -20px;margin-bottom: 10px;margin-left: 120px;text-align:left;">
+                    The course materials expect different levels of understanding. Please take a look at them before class.
+                    <ul> 
+                        <li><font color=#800000>[C]onceptual</font>: key concepts and applications; when things work or fail</li>
+                        <li><font color=#800000>[P]roblem solving</font>: maths/coding details; hands-on debugging</li>
+                    </ul> 
+                </div>
+                  <div class="table-wrapper" style="width:100%;margin:auto;">
+                    <font style="font-size: 16px">
+                        <table class="alt">
+						  <tbody>
+                          </tbody><colgroup>
+                              <col width="12%">
+                              <col width="10%">
+                              <col width="28%">
+                              <col width="32%">
+                              <col width="12%">
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th style="text-align:center">Theme</th>
+                              <th style="text-align:center">Date</th>
+                              <th style="text-align:center">Topic</th>
+                              <th style="text-align:center">Materials</th>
+                              <th style="text-align:center">Assignments</th>
+                            </tr>
+                          </thead>
+                          <style>
+                            ul.materials {
+                                padding-left: 15px;
+                            }
+                            div.subtopic {
+                                font-style: normal;
+                                font-family: HelveticaNeue-Light;
+                                font-weight: 200;
+                            }
+                            td.topic {
+                                font-family: HelveticaNeue;
+                                font-weight: 600;
+                            }
+                             td.topic2 {
+                                font-style: italic;
+                                font-weight: 200;
+                            }
+                          </style>
+
+    <!-- Start schedule -->
+    <tbody>
+      <tr class="alternate">
+          <td rowspan=10 style="vertical-align:middle;text-align:center;">Image Basics<br/>(Week 1-3) </td>
+        <td>Mon, Aug. 30</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/zsrkw1s9jy0it2q/lec1-intro.pdf?dl=0">Lec. 1: Introduction</a>
+          <div class="subtopic">
+            Course: logistics
+            <br/>Computer vision: goal, applications</div>
+        </td>
+        <td>
+            <i>Motivation: why computer vison is so cool</i>
+          <ul class="materials">
+            <li>[C] <a href="https://www.youtube.com/watch?v=fgbBtnCvcDI">Ng: “AI is the new electricity" (YouTube)</a></li>
+            <li>[C] <a href="https://www.dropbox.com/sh/88qvr1z7fpfx1tv/AAB4Ia3yEMuZ4WSzNWB5acTta?dl=0&preview=SzeliskiBookDraft_20210828.pdf">Szeliski Chapter 1</a></li>
+            <li>[P] Stanford CS231n: <a href="https://cs231n.github.io/setup-instructions/#working-remotely-on-google-colaboratory">Colab tutorial</a></li>
+          </ul>
+        </td>
+        <td><strike><a href="https://drive.google.com/file/d/1roZNWKdQN6eYxYGHRe-X_uAsTrPma_9c/view?usp=sharing">ps1 out (prerequisite)</a><br/>
+            <a href="https://drive.google.com/file/d/14IgAR1dOc1iMG4bFakOQkUFnD-pmfg-p/view?usp=sharing">lab1 out</a> <br/>
+            <a href="https://docs.google.com/document/d/1Ii08EZK-BtAc4QvtNgWSHsi8cW1kUDJfmUltuvxVkH8/edit#bookmark=id.tqsuteg4w7h5"><font color=#800000>final project (ideas out)</font></a></strike>
+        </td>
+      </tr>
+      <tr class="alternate">
+        <td>Wed, Sep. 1 </td>
+        <td class="topic"><a href="https://www.dropbox.com/s/dkcwbmlqxdfvfs2/lec2-imageformation.pdf?dl=0">Lec. 2: Image Formation</a>
+          <div class="subtopic">
+              Light: EM wave, metamer, gamma curve
+              <br/>Material: diffusion, specular, BRDF</div>
+        </td>
+        <td>
+            <i>Imaging: optics and human perception</i>
+          <ul class="materials">
+            <li>[C] <a href="https://www.dropbox.com/sh/88qvr1z7fpfx1tv/AAB4Ia3yEMuZ4WSzNWB5acTta?dl=0&preview=SzeliskiBookDraft_20210828.pdf">Szeliski Chapter 2.2.1, 2.2.2</a></li>
+          </ul>
+        </td>
+        <td> </td>
+      </tr>
+      <tr class="alternate">
+        <td>Fri, Sep. 3 </td>
+        <td class="topic2">Lab 1: Linear Algebra for Digital Images
+          <div class="subtopic">
+              Links: <a href="https://www.dropbox.com/s/qgzjk8oc7rsfqrc/lab1_linear_algebra.pdf?dl=0">[pdf]</a>, <a href="https://drive.google.com/file/d/14IgAR1dOc1iMG4bFakOQkUFnD-pmfg-p/view?usp=sharing">[Colab]</a>
+              <br/>Representation: matrix (NumPy)
+              <br/>Transformation: patch-wise function
+          </div>
+        </td>
+        <td>
+            <i>Maths review: linear algebra</i>
+          <ul class="materials">
+            <li>[P] numpy.org: <a href="https://numpy.org/doc/stable/user/absolute_beginners.html">NumPy 101</a></li>
+            <li>[P] <a href="https://www.deeplearningbook.org/contents/linear_algebra.html">Goodfellow Chapter 2</li>
+          </ul>
+        </td>
+        <td><strike>ps1 due</strike>
+        </td>
+      </tr>
+      <tr class="alternate">
+        <td colspan=4 align=center bgcolor="#9de0ad">No Class (Labor Day)</td>
+      </tr>
+      <tr class="alternate">
+        <td>Wed, Sep. 8 </td>
+        <td class="topic"><a href="https://www.dropbox.com/s/wd1jwtynep246yz/lec3-camera.pdf?dl=0">Lec. 3: Cameras</a>
+          <div class="subtopic">Basic: Pin-hole and perspective geometry
+              <br/>Improvement: lens, digital sensor</div>
+        </td>
+        <td>
+            <i>Imaging: a brief history of cameras</i>
+          <ul class="materials">
+            <li>[C] <a href="https://www.dropbox.com/sh/88qvr1z7fpfx1tv/AAB4Ia3yEMuZ4WSzNWB5acTta?dl=0&preview=SzeliskiBookDraft_20210828.pdf">Szeliski Chapter 2.1.4, 2.2.3</a></li>
+          </ul>
+        </td>
+        <td>
+            <strike><a href="https://drive.google.com/file/d/1t2OBpreqap9om2OkJatBxgT6-YU3BhLe/view?usp=sharing">ps2 out (formation)</a><br/>
+            <a href="https://drive.google.com/file/d/1sv0g0oVk0esb7sVSOnAucLK69WiIV5_C/view?usp=sharing">lab2 out</a></strike>
+        </td>
+      </tr>
+      <tr class="alternate">
+        <td>Fri, Sep. 10</td>
+        <td class="topic2">Lab 2: Calculus for Function Optimization
+          <div class="subtopic">
+              Links: <a href="https://www.dropbox.com/s/jiqs5y6px6v073b/lab2_calculus.pdf?dl=0">[pdf]</a>, <a href="https://drive.google.com/file/d/1sv0g0oVk0esb7sVSOnAucLK69WiIV5_C/view?usp=sharing">[Colab]</a>
+              <br/> Optimization 101
+              <br/> Gradient: multivariate, gradient descent 
+              </div>
+        </td>
+        <td>
+            <i>Maths review: calculus</i>
+          <ul class="materials">
+            <li>[P] <a href="https://www.deeplearningbook.org/contents/numerical.html">Goodfellow Chapter 4</li>
+          </ul>
+        </td>
+        <td> <strike><a class="nope" href="https://forms.gle/gYM71kjZi6WpjfNB7">survey</a> </strike></td>
+      </tr>
+      <tr class="alternate">
+        <!--td rowspan=3 style="vertical-align:middle;text-align:center;">Image Processing <br/>(Week 3)</td-->
+        <td>Mon, Sep. 13</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/bod2qbw11wcvt0w/lec4-filtering.pdf?dl=0">Lec. 4: Image Processing I (Filtering)</a>
+            <div class="subtopic">
+                Linear/non-linear filters
+                <br/>Edge, denoising</div>
+        </td>
+        <td>
+            <i>Filtering: simple image filters</i>
+          <ul class="materials">
+            <li><a href="http://szeliski.org/Book/">Szeliski, Linear Filtering, Chapter 3.2</a></li>
+            <li><a href="http://szeliski.org/Book/">Szeliski, Nonlinear Filtering, Chapter 3.3</a></li>
+          </ul>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr class="alternate">
+        <td>Wed, Sep. 15</td>
+        <td class="topic2"> <a href="https://www.dropbox.com/s/ds1lhk9p772olvn/review1_ps2-lec4.pdf?dl=0">Review Session</a>
+          <div class="subtopic">
+              Pset2, Lec. 4
+          </div>
+        </td>
+        <td>
+        </td>
+        <td></td>
+      </tr>
+      <tr class="alternate">
+        <td>Fri, Sep. 17</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/yxf4teysw8pnjs2/lec5-basis-pyramid_part1.pdf?dl=0">Lec. 5: Image Processing II (Decomposition)</a>
+          <div class="subtopic">
+            Fourier transform: 1 layer, N filters
+          </div>
+        </td>
+        <td>
+            <i>Filtering: filter basis (breadth)</i>
+          <ul class="materials">
+            <li><a href="http://szeliski.org/Book/">Szeliski, Fourier Transforms, Chapter 3.4</a></li>
+          </ul>
+
+        </td>
+        <td><strike>ps2 due</strike></td>
+      </tr>
+      <tr class="alternate">
+        <td>Mon, Sep. 20</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/l2trx4q3ksjeael/lec5-basis-pyramid_part2.pdf?dl=0">Lec. 5 (part 2)</a>
+          <div class="subtopic">
+            Image pyramid: N layers, 1 filter
+          </div></td>
+          <td>
+            <i>Filtering: filter recursion (depth)</i>
+          <ul class="materials">
+            <li><a href="http://szeliski.org/Book/">Szeliski Chapter 3.5</a></li>
+          </ul>
+          </td>
+          <td><strike><a href="https://drive.google.com/file/d/1FibpbApo6RykMesw4CWwa4jwRAuC1XtE/view?usp=sharing">ps3 out (filter)</a></strike></td> 
+      </tr>
+      <tr class="alternate">
+        <td rowspan=8 style="vertical-align:middle;text-align:center;">Deep Learning<br/>(Week 4-6)</td>
+        <td>Wed, Sep. 22</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/vi7b6eamyrd9grj/lec6-ml-basics.pdf?dl=0">Lec. 6: Machine Learning I</a>
+          <div class="subtopic">Machine learning overview
+            </div>
+        </td>
+        <td>
+            <i>AlexNet: linear layer</i>
+          <ul class="materials">
+            <li><a href="http://szeliski.org/Book/">Szeliski 5.1.1</a></li>
+            <li><a href="http://www.deeplearningbook.org/contents/ml.html">Goodfellow Chapter 5, ML basics</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0">DeepLearningAI videos, C1W1 (optional)</a></li>
+          </ul>
+        </td>
+        <td></td>
+
+      </tr>
+      <tr class="alternate">
+        <td>Fri, Sep. 24</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/542isgecmszhn4q/lec7-ml-linear.pdf?dl=0">Lec. 7: Machine Learning II</a>
+          <div class="subtopic">Linear regression
+             <br> Logistic regression, loss function</div>
+        </td>
+        <td>
+            <i>AlexNet: loss layer</i>
+          <ul class="materials">
+            <li><a href="http://szeliski.org/Book/">Szeliski 5.1.3-5.1.4</a></li>
+          </ul>
+        </td>
+        <td></td>
+
+      </tr>
+
+      <!--tr class="alternate">
+        <td rowspan=9 style="vertical-align:middle;text-align:center;">Deep Learning<br/>(Week 4-6)</td>
+        <td>Mon, Sep. 20</td>
+        <td class="topic">Lec. 6: Machine Learning I
+          <div class="subtopic">Machine learning overview
+            <br>Linear regression</div>
+        </td>
+        <td>
+            <i>AlexNet: linear layer</i>
+          <ul class="materials">
+            <li><a href="http://szeliski.org/Book/">Szeliski 5.1.1</a></li>
+            <li><a href="http://www.deeplearningbook.org/contents/ml.html">Goodfellow Chapter 5, ML basics (optional)</a></li>
+          </ul>
+        </td>
+        <td></td>
+      </tr>
+      <tr class="alternate">
+        <td>Wed, Sep. 22</td>
+        <td class="topic">Lec. 7: Machine Learning II
+          <div class="subtopic">Logistic regression
+            <br>Loss function, gradient descent</div>
+        </td>
+        <td>
+            <i>AlexNet: loss layer</i>
+          <ul class="materials">
+            <li><a href="http://szeliski.org/Book/">Szeliski 5.1.3-5.1.4</a></li>
+          </ul>
+        </td>
+        <td></td>
+      </tr>
+      <tr class="alternate">
+        <td>Fri, Sep. 24</td>
+        <td class="topic2">Lab 4: PyTorch I
+          <div class="subtopic"></div>
+        </td>
+        <td>
+          <ul class="materials">
+          </ul>
+        </td>
+        <td>ps3 due
+          <br><a class="nope" href="">ps4 out (intro to ML)</a>   </td>
+      </tr-->
+      <tr class="alternate">
+        <td>Mon, Sep. 27</td>
+        <td class="topic2">Lab. 3: Machine Learning
+          <div class="subtopic">
+              Links: <a href="https://www.dropbox.com/s/iqeel7y8n26t5i8/lab3_pytorch.pdf?dl=0">[pdf]</a>, <a href="https://drive.google.com/file/d/10LZkusstfDho20yFhPvn05KA1Iqqyp3Z/view?usp=sharing">[Colab]</a>
+              <br>Pytorch basics
+            <br>Generalization error
+          </div>
+        </td>
+        <td>
+            <i>AlexNet: Softmax layer</i>
+          <ul class="materials">
+          </ul>
+        </td>
+        <td><strike><a href="https://drive.google.com/file/d/10LZkusstfDho20yFhPvn05KA1Iqqyp3Z/view?usp=sharing">lab3 out</a></strike></td>
+      </tr>
+      <tr class="alternate">
+        <td>Wed, Sep. 29</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/h4lmd8lvedwc9qa/lec8-nn-model.pdf?dl=0">Lec. 8: Neural Networks I</a>
+          <div class="subtopic">Handcrafted features
+            <br>Activation functions</div>
+        </td>
+        <td>
+            <i>AlexNet: fully-connected layer</i>
+          <ul class="materials">
+              <li><a href="http://szeliski.org/Book/">Szeliski 5.3</a></li>
+          </ul>
+        </td>
+        <td>        </td>
+</td>
+      </tr>
+      <tr class="alternate">
+        <td>Fri, Oct. 1</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/xrecq20qcgvrovy/lec9_nn-optimization.pdf?dl=0">Lec. 9: Neural Networks II</a>
+          <div class="subtopic">Computation graphs
+            <br>Backpropagation</div>
+        </td>
+        <td>
+            <i>AlexNet: optimization</i>
+          <ul class="materials">
+              <li><a href="http://szeliski.org/Book/">Szeliski 5.3.5-5.3.6</a></li>
+            <li><a href="http://www.deeplearningbook.org/contents/optimization.html">Goodfellow optimization</a></li>
+            <li>C. Olah notes: <a href="http://colah.github.io/posts/2015-08-Backprop/">backpropagation </a></li>
+            <li>R. Grosse's notes: <a href="http://www.cs.toronto.edu/~rgrosse/courses/csc421_2019/readings/L07%20Optimization.pdf">optimization</a>,
+            <a href="http://www.cs.toronto.edu/~rgrosse/courses/csc421_2019/readings/L06%20Automatic%20Differentiation.pdf">auto diff</a></li>
+          </ul>
+        </td>
+        <td>      </tr>
+      <tr class="alternate">
+        <td>Mon, Oct. 4</td>
+        <td class="topic2">Lab 4: Multilayer Perceptron
+          <div class="subtopic">
+              Links: <a href="https://www.dropbox.com/s/a8znrr4g471q4rx/lab4_pytorch_mlp.pdf?dl=0">[pdf]</a>, <a href="https://colab.research.google.com/drive/1n95FgSCxHs0C1MDkV3xLoNLA3fONZacd?usp=sharing">[Colab]</a>
+              <br/>Backpropagation as dynamic programming
+              <br/>CIFAR10: dataloader, tensorboard
+          </div>
+        </td>
+        <td></td>
+        <td>
+            <strike>ps3 due
+            <br/><a href="https://colab.research.google.com/drive/1n95FgSCxHs0C1MDkV3xLoNLA3fONZacd?usp=sharing">lab4 out</a>
+            <br/><a href="https://docs.google.com/spreadsheets/d/166chRT2QaysaEUtOjSzL4z8yWFWa1nYCyPdoVzrafjM/edit?usp=sharing"><font color=#800000>final project (team info due)</a></font> 
+            </strike>            
+        </td>
+      </tr>
+
+      <tr class="alternate">
+        <td>Wed, Oct. 6</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/7k74n20sy0l14ul/lec10-cnns.pdf?dl=0">Lec. 10: Convolutional Networks</a>
+          <div class="subtopic">Convolution and pooling layers
+            <br>Normalization and dropout layers</div>
+        </td>
+        <td>
+            <i>AlexNet: layers for efficient learning from images </i>
+          <ul class="materials">
+              <li><a href="http://szeliski.org/Book/">Szeliski 5.4</a></li>
+            <li><a href="http://www.deeplearningbook.org/contents/convnets.html">Goodfellow: Chapter 9, Convolutional networks</a></li>
+            <li>Papers: <a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">AlexNet</a></li>
+          </ul>
+        </td>
+        <td>
+        </td>
+      </tr>
+      <tr class="alternate">
+        <td>Fri, Oct. 8 </td>
+        <td class="topic"><a href="https://www.dropbox.com/s/gx4axkwp1bxoly8/lec11-cnns-advanced.pdf?dl=0">Lec. 11: AlexNet and Beyond</a>
+          <div class="subtopic">AlexNet visualization
+            <br>VGGNet, BatchNorm, ResNet</div>
+        </td>
+        <td>
+            <i>Beyond AlexNet: three tricks to crack ImageNet</i>
+          <ul class="materials">
+              <li><a href="https://distill.pub/2017/feature-visualization/">Distll: feature visualization</a></li>
+              <li>Papers: <a href="https://arxiv.org/abs/1409.1556">VGG-Net</a>, <a href="http://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf">ResNet</a>,  <a href="https://arxiv.org/pdf/1502.03167.pdf">BatchNorm</a></li>
+          </ul>
+        </td>
+        <td>
+            <strike><a href="https://drive.google.com/file/d/17ulmCZ-PDlROqyjgvdkbPD1cdEo_c30E/view?usp=sharing">ps4 out (ML+NN)</a></strike> 
+        </td>
+      </tr>
+      <tr class="alternate">
+          <td rowspan=8 style="vertical-align:middle;text-align:center;">Image Understanding<br/>(Week 7-8)</td>
+        <td colspan=4 align=center bgcolor="#9de0ad">No Class (Fall Break)
+          <div class="subtopic"></div>
+        </td>
+      </tr>
+      <tr class="alternate">
+        <td>Tue, Oct. 12</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/t2w7fd68ldrkcvg/lec12-image-prediction.pdf?dl=0">Lec. 12: Image Prediction</a>
+          <div class="subtopic">
+            Applications and challenges
+            <br/>MVP and design choices</div>
+        </td>
+        <td>
+            Target domain: scalar label
+          <ul class="materials">
+            <li><a href="http://szeliski.org/Book/">Szeliski 6.2</a></li>
+            <li>Paper: <a href="https://arxiv.org/abs/1905.11946">EfficientNet</a></li>
+          </ul>
+        </td>
+        <td>
+            <a href="https://docs.google.com/document/d/1Ii08EZK-BtAc4QvtNgWSHsi8cW1kUDJfmUltuvxVkH8/edit#"><font color=#800000>final project (guideline)</a></font> 
+        </td>
+      </tr>
+
+      <tr class="alternate">
+        <td>Wed, Oct. 13</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/qg5c3419nq50k5g/lec13-image-object_part1.pdf?dl=0">Lec. 13: Object Detection I</a>
+          <div class="subtopic">Problem formulation
+            <br>Two-stage and single-stage</div>
+        </td>
+        <td>
+            Target domain: bounding boxes
+          <ul class="materials">
+              <li><a href="http://szeliski.org/Book/">Szeliski 6.3</a></li>
+          </ul>
+        </td>
+        <td></td>
+
+      </tr>
+      <tr class="alternate">
+        <td>Fri, Oct. 15</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/70nlhv5bpmf8exf/lec14-image-object_part2.pdf?dl=0">Lec. 14: Object Detection II</a>
+          <div class="subtopic">
+            R-CNN-based, YOLO</div>
+        </td>
+
+        </td>
+        <td>
+            Target domain: bounding boxes
+          <ul class="materials">
+              <li>Paper: <a href="https://arxiv.org/pdf/1311.2524.pdf">R-CNN</a>,
+                  <a href="https://arxiv.org/pdf/1504.08083.pdf">Fast R-CNN</a>
+                  <a href="https://arxiv.org/pdf/1506.01497.pdf">Faster R-CNN</a>
+                  <a href="https://arxiv.org/pdf/1506.02640v5.pdf">YOLO</a>
+              </li>
+          </ul>
+        </td>
+        <td> </td>
+      </tr>
+      <tr class="alternate">
+        <td>Mon, Oct. 18</td>
+        <td class="topic2">Lab 5: Image Prediction and Object Detection in PyTorch
+          <div class="subtopic">
+              Links: <a href="https://www.dropbox.com/s/k731g3c3563ezfg/lab5_pytorch_image-prediction-detection.pdf?dl=0">[pdf]</a>, <a href="https://drive.google.com/file/d/1T3yGcUvS2-dYyX3GAZXehTwP38BoH4HB/view?usp=sharing">[Colab]</a></div>
+        </td>
+        
+        <td></td>
+        <td><strike>ps4 due</strike>
+            <br/> <strike><a href="https://drive.google.com/file/d/1T3yGcUvS2-dYyX3GAZXehTwP38BoH4HB/view?usp=sharing">lab5 out</a></strike>
+        </td>
+
+      </tr>
+      <tr class="alternate">
+        <td>Wed, Oct. 20</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/gwu1ctnkaicto9q/lec15-image-seg.pdf?dl=0">Lec. 15: Image Segmentation</a>
+          <div class="subtopic">
+            Generic/Semantic/Instance segmentation
+          <br/>FCN, SegNet, U-Net</div>
+        </td>
+        <td>
+            Target domain: grid label
+          <ul class="materials">
+            <li><a href="http://szeliski.org/Book/">Szeliski 6.4</a></li>
+            <li>Paper: <a href="https://arxiv.org/abs/1905.11946">FCN</a>, <a href="https://arxiv.org/abs/1511.00561v3">SegNet</a>, <a href="https://arxiv.org/abs/1505.04597">U-Net</a></li>
+          </ul>
+        </td>
+
+        <td><strike><a href="https://www.kaggle.com/dwsteve/csci3343-pset5">ps5 out (finetune)</a> </strike></td>
+      </tr>
+      <tr class="alternate">
+        <td>Fri, Oct. 22</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/1fsmllu77m17iuk/lec16-image-syn.pdf?dl=0">Lec. 16: Image Generation</a>
+          <div class="subtopic">
+              Links: <a href="https://www.dropbox.com/s/9lkzp0b17rab2tr/lec16.mov?dl=0">[video]</a>
+              <br/>GAN and conditional GAN
+              <br/>Style transfer
+          </div>
+        </td>
+        <td>
+            Target domain: natural images
+          <ul class="materials">
+            <li>GAN loss: <a href="https://arxiv.org/pdf/1406.2661.pdf">GAN</a>, 
+                <a href="https://phillipi.github.io/pix2pix/">pix2pix</a>, 
+                <a href="https://junyanz.github.io/CycleGAN/">CycleGAN</a></li>
+            <li>Perceptual loss: <a href="https://arxiv.org/abs/1508.06576">Gatys et al.</a>, <a href="https://arxiv.org/abs/1603.08155">Johnson et al.</a></li>
+          </ul>
+        </td>
+        <td> <strike><a class="nope" href="https://docs.google.com/spreadsheets/d/166chRT2QaysaEUtOjSzL4z8yWFWa1nYCyPdoVzrafjM/edit?usp=sharing"><font color=#800000>final project (proposal due)</a></strike></font>
+        </td>
+      </tr>
+      <tr class="alternate">
+        <td>Mon, Oct. 25</td>
+      <td class="topic2">Lab 6: Image Segmentation and Genereation in PyTorch
+          <div class="subtopic">
+              Links: <a href="https://www.dropbox.com/s/m80cynwoqn54fmk/lab6-pytorch_seg-syn.pdf?dl=0">[pdf]</a>, <a href="https://drive.google.com/file/d/1cqCB4rjCuMoGQaeN97IDxy8lifrYJfHu/view?usp=sharing">[Colab]</a>, <a href="https://www.dropbox.com/s/ww7pjxl3rs134vp/lab6.mov?dl=0">[video]</a>
+          </div>
+        </td>
+         <td>
+          <ul class="materials">
+          </ul>
+        </td>
+     
+        <td><strike><a href="https://drive.google.com/file/d/1cqCB4rjCuMoGQaeN97IDxy8lifrYJfHu/view?usp=sharing">lab6 out</a></strike></td>
+      </tr>
+      <tr class="alternate">
+        <td rowspan=5 style="vertical-align:middle;text-align:center;">Video Understanding<br/>(Week 9-10)</td>
+        <td>Wed, Oct. 27</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/n6a9juayycuq99j/lec17-motion.pdf?dl=0">Lec. 17: Motion</a>
+          <div class="subtopic">
+            Links: <a href="https://www.dropbox.com/s/5cehbcb7ogcw16j/lec17-motion.mov?dl=0">[video]</a>
+            <br/> Motion representation
+            <br/> Optical flow
+          </div>
+        </td>
+        <td>
+            Target domain: grid label
+          <ul class="materials">
+            <li><a href="http://szeliski.org/Book/">Szeliski 9.2, 9.3</a></li>
+          </ul>
+
+        </td>
+
+
+        <td> </td>
+      </tr>
+      <tr class="alternate">
+        <td> Fri, Oct. 29</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/b4x6vhna2jbcmbj/lec18-video-pred.pdf?dl=0">Lec. 18: Video Prediction</a>
+          <div class="subtopic">
+              Links: <a href="https://www.dropbox.com/s/wiho7du5oyiiohe/lec18-video-pred.mov?dl=0">[video]</a>
+              <br/>Action recognition
+              <br/> 3D CNN and RNNs
+          </div>
+        </td>
+        <td>
+            Target domain: scalar label 
+          <ul class="materials">
+            <li><a href="http://szeliski.org/Book/">Szeliski 6.5</a></li>
+            <li><a href="https://www.deeplearningbook.org/contents/rnn.html">Goodfellow 10</a></li>
+          </ul>
+        </td>
+
+        <td><strike>ps5 due</strike></td>
+      </tr>
+      <tr class="alternate">
+        <td>Mon, Nov. 1</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/wb75g4i4n104rgt/lec19-video-track.pdf?dl=0">Lec. 19: Object Tracking I</a>
+          <div class="subtopic">
+              Links: <a href="https://www.dropbox.com/s/7wr8py9jbvs3kaq/lec19-video-track.mov?dl=0">[video]</a>
+              <br/>  Single-object tracking, Siamese NN
+          </div>
+        </td>
+        <td>
+            Target domain: temporally-linked bounding boxes
+          <ul class="materials">
+              <li>SOT: <a href="http://3dvision.princeton.edu/projects/2013/tracking/paper.pdf">Benchmark</a>, <a href="https://arxiv.org/abs/1604.01802">Held et al.</a>, <a href="https://arxiv.org/abs/1510.07945">Nam et al.</a></li>
+          </ul>
+        </td>
+        <td><strike><a href="https://docs.google.com/spreadsheets/d/166chRT2QaysaEUtOjSzL4z8yWFWa1nYCyPdoVzrafjM/edit#gid=1147316173">check-in sign-up</a></strike></td>
+      </tr>
+      <tr class="alternate">
+        <td>Wed, Nov. 3 </td>
+        <td class="topic"><a href="https://www.dropbox.com/s/spdgq2wf47rtxra/lec20-video-track2.pdf?dl=0">Lec. 20: Object Tracking II</a>
+          <div class="subtopic">
+              Links: <a href="https://www.dropbox.com/s/1wushdi7vfrdrdp/lec20-video-track2.mov?dl=0">[video]</a>
+              <br/>  Multi-object tracking, Graph NN
+              </div>
+        </td>
+        <td>
+            Target domain: temporally-linked bounding boxes
+          <ul class="materials">
+              <li>MOT: <a href="https://arxiv.org/pdf/1504.01942.pdf">Benchmark</a>, <a href="http://vision.cse.psu.edu/courses/Tracking/vlpr12/lzhang_cvpr08global.pdf">Zhang et al.</a>, <a href="https://arxiv.org/pdf/1912.07515.pdf">Brasó et al.</a></li>
+          </ul>
+        </td>
+        <td> </td>
+      </tr>
+      <tr class="alternate">
+        <td>Fri, Nov. 5 </td>
+        <td class="topic2">Lab 7: Tips For The Final Project
+          <div class="subtopic">
+              Links: <a href="https://www.dropbox.com/s/eigq7b8cfmwca4q/lab7-final-project.pdf?dl=0">[pdf]</a>, <a href="https://www.dropbox.com/s/3hinl13qtigpsxg/lab7-final-project.mov?dl=0">[video]</a>
+              <br/><a href="https://libguides.bc.edu/prf.php?account_id=287686">Sarah Barbrow</a> @ BC library
+              <br/><a href="https://www.bc.edu/bc-web/academics/sites/center-for-teaching-excellence/about/Meet-our-staff.html">Sarah Castricum</a> @ BC Teaching Center
+          </div>
+        </td>
+        <td></td>
+        <td> </td>
+      </tr>
+
+      <tr class="alternate">
+        <td rowspan=5 style="vertical-align:middle;text-align:center;">3D Understanding<br/>(Week 11-12)</td>
+        <td>Mon, Nov. 8</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/x93bh3lhxul7cyq/lec21-image-transformation.pdf?dl=0">Lec. 21: Image Transformation</a>
+          <div class="subtopic">
+              Links: <a href="https://www.dropbox.com/s/flix9kkdaycq3s6/lec21-image-transformation.mov?dl=0">[video]</a>
+              <br/>Homogeneous coordinate, homography</div>
+        </td>
+        <td>
+            Target domain: transformation matrix
+          <ul class="materials">
+              <li><a href="http://szeliski.org/Book/">Szeliski 2.1, 3.6.1</a></li>
+          </ul>
+        </td>
+        <td><strike><a href="https://drive.google.com/file/d/1LciwEmaYfYfNyDYOWRzZx_0poYulOhzb/view?usp=sharing">ps6 out (motion)</a>
+            <br/><font color=#800000>final project (check-in)</font></strike></td>
+      </tr>
+      <tr class="alternate">
+        <td>Wed, Nov. 10 </td>
+        <td class="topic"><a href="https://www.dropbox.com/s/l9tljjet4soptpu/lec22-image-alignment.pdf?dl=0">Lec. 22: Image Alignment</a>
+          <div class="subtopic">
+              Links: <a href="https://www.dropbox.com/s/kntu5z2n25afka9/lec22-image-alignment.mov?dl=0">[video]</a>
+              <br/> Feature matching, RANSAC</div>
+        </td>
+        <td>
+            Target domain: transformation matrix
+          <ul class="materials">
+              <li><a href="http://szeliski.org/Book/">Szeliski 7.1</a></li>
+          </ul>
+        </td>
+        <td></td>
+      </tr>
+      <tr class="alternate">
+        <td>Fri, Nov. 12 </td>
+        <td class="topic"><a href="https://www.dropbox.com/s/bwzmr2av92zfegw/lec23-image-feature.pdf?dl=0">Lec. 23: Image Feature</a>
+          <div class="subtopic">
+              Links: <a href="https://www.dropbox.com/s/wljpzzxbjv2bgkv/lec23-image-feature.mov?dl=0">[video]</a>
+              <br/>Feature detection, SIFT
+            </div>
+        </td>
+        <td>
+            Target domain: invariant feature
+          <ul class="materials">
+              <li><a href="http://szeliski.org/Book/">Szeliski 8.1</a></li>
+          </ul>
+        </td>
+        <td></td>
+      </tr>
+      <tr class="alternate">
+        <td>Mon, Nov. 15 </td>
+        <td class="topic"><a href="https://www.dropbox.com/s/bwzmr2av92zfegw/lec23-image-feature.pdf?dl=0">Lec. 24: Stereo Vision</a>
+          <div class="subtopic">
+              Pespective geometry
+              <br/> Stereo matching, depth prediction
+            </div>
+        </td>
+        <td>
+            Target domain: grid label
+          <ul class="materials">
+              <li><a href="http://szeliski.org/Book/">Szeliski 12</a></li>
+          </ul>
+        </td>
+        <td></td>
+      </tr>
+      <tr class="alternate">
+        <td>Wed, Nov. 17</td>
+        <td class="topic"><a href="https://www.dropbox.com/s/1z1fwr1di0x6l8w/lec25-point-cloud.pdf?dl=0">Lec. 25: Point Cloud</a>
+          <div class="subtopic">
+              Links: <a href="https://www.dropbox.com/s/10b1flj47a143xu/lec25-point-cloud.m4a?dl=0">[audio]</a>
+              <br/> Epipolar geometry, Structure from motion
+              <br/> PointNet</div>
+        </td>
+        <td>
+            Source domain: point cloud
+          <ul class="materials">
+            <li><a href="https://www.robots.ox.ac.uk/~vgg/hzbook/hzbook2/HZepipolar.pdf">Hartley and Zisserman: epipolar geometry</a></li>
+            <li><a href="https://openaccess.thecvf.com/content_cvpr_2017/papers/Qi_PointNet_Deep_Learning_CVPR_2017_paper.pdf">PointNet</a></li>
+          </ul>
+        </td>
+
+        <!--td class="topic">Lec. 25: Implicit Function
+          <div class="subtopic">
+              Signed distance function, Kinectic fusion
+              <br/>DeepSDF 
+          </div>
+        </td>
+        <td>
+            Target domain: SDF
+          <ul class="materials">
+          </ul>
+        </td-->
+
+        <td><strike>ps6 due</strike></td>
+      </tr>
+      <tr class="alternate">
+        <td rowspan=6 style="vertical-align:middle;text-align:center;">Frontiers in Vision<br/>(Week 13-14)
+</td>
+        <td>Fri, Nov. 19</td>
+        <td class="topic"> Guest Lecture: <a href="https://www.bc.edu/bc-web/schools/stm/faculty/faculty-directory/andrea-vicini-sj.html">Andrea Vicini, S.J.</a>
+          <div class="subtopic">
+              Professor @ BC<br/>
+              Ethics in AI/Biomedical Research
+          </div>
+        </td>
+        <td>
+        <ul class="materials">
+            <li>AI Ethics:
+                <a href="https://www.nature.com/articles/d41586-020-03188-2">Roussi</a>, 
+                <a href="https://www.nature.com/articles/d41586-021-00868-5">Crawford</a>, 
+                <a href="http://dvkjournals.in/index.php/ah/article/view/3203">Kirchschlaeger</a>,
+                <a href="https://www.commonwealmagazine.org/minds-without-brains">Farrell</a>
+            </li>
+            <li>Biomedical Ethics:
+                <a href="https://www.smithsonianmag.com/science-nature/how-doctors-are-using-artificial-intelligence-battle-covid-19-180977124/">Morrison</a>, 
+                <a href="https://www.nature.com/articles/d41586-021-00812-7">Dance</a>
+            </li>
+        </ul>
+        </td>
+
+          <td><strike><a href="https://drive.google.com/file/d/1H0PCAL9FsOiAzhBdMdFV34Db0vYKMdKO/view?usp=sharing">ps7 out (stitch)</a> </strike> </td>
+      </tr>
+      <tr class="alternate">
+        <td>Mon, Nov. 22</td>
+        <td class="topic">Guest Lecture: <a href="https://jamestompkin.com/">James Tompkin</a> 
+          <div class="subtopic">
+            Assistant Professor @ Brown University
+            <br/> computer vision for creative media
+          </div>
+        </td>
+        <td>
+          <ul class="materials">
+          </ul>
+        </td>
+        <td><strike><font color=#800000>final project (draft slide due)</font></strike>
+        </td>
+      </tr>
+      <tr class="alternate">
+        <td align=center colspan="4" bgcolor="#9de0ad">No Class (Thanksgiving Break)</td>
+      </tr>
+      <tr class="alternate">
+        <td>Mon, Nov. 29</td>
+        <!--td class="topic">Guest Lecture: <a href="https://viterbi-web.usc.edu/~limjj/">Joseph Lim</a>
+          <div class="subtopic">
+            Assistant Professor @ USC
+            <br/> Robotic vision and learning
+          </div>
+        </td-->
+        <td class="topic"><a href="https://www.dropbox.com/s/lvcwzstlttvr53h/lec26-multimodal.pdf?dl=0">Lec. 26: Multimodal Learning</a>
+          <div class="subtopic">
+            Vision and soud
+            <br/> Vision and text
+          </div>
+        </td>
+        <td>
+          <ul class="materials">
+          </ul>
+        </td>
+        <td> </td>
+      </tr>
+
+      <tr class="alternate">
+        <td>Wed, Dec. 1</td>
+        <td class="topic">Guest Lecture: <a href="https://people.csail.mit.edu/yuewang/">Yue Wang</a>
+          <div class="subtopic">
+            Final-year PhD @ MIT
+            <br/> Point cloud recognition, autonomous driving
+          </div>
+        </td>
+        <td>
+          <ul class="materials">
+          </ul>
+        </td>
+        <td> </td>
+      </tr>
+      <tr class="alternate">
+        <td>Fri, Dec. 3</td>
+        <td class="topic">Guest Lecture: <a href="https://www.cs.utexas.edu/users/grauman/">Kristen Grauman</a>
+          <div class="subtopic">
+          Professor @ UT Austin
+          <b><font color=#800000>(BC alum!)</font></b>
+            <br/> Vision and sound
+          </div>
+        </td>
+        <td>
+        <ul class="materials">
+            <li>Papers:
+                <a href="http://vision.cs.utexas.edu/projects/coseparation/">Co-separation</a>, 
+                <a href="http://vision.cs.utexas.edu/projects/VisualVoice/">VisualVoice</a>, 
+                <a href="http://vision.cs.utexas.edu/projects/visualEchoes/">VisualEchos</a>,
+                <a href="https://www.cs.cmu.edu/~spurushw/publication/avmap/">AVMap</a>,
+                <a href="http://vision.cs.utexas.edu/projects/move2hear/">Move2Hear</a>
+            </li>
+        </ul>
+        </td>
+        <td>ps7 due</td>
+      </tr>
+      <tr class="alternate">
+        <td rowspan=6 style="vertical-align:middle;text-align:center;">Final Projects<br/>(Week 15-16)</td>
+        <td>Mon, Dec. 6</td>
+        <td class="topic">Presentation I
+          <div class="subtopic"></div>
+        </td>
+        <td></td>
+        <td><font color=#800000>final project (final slide due)</font>
+        </td>
+      </tr>
+      <tr class="alternate">
+        <td>Wed, Dec. 8</td>
+        <td class="topic">Presentation II
+          <div class="subtopic"></div>
+        </td>
+        <td></td><td></td>
+      </tr>
+      <tr class="alternate">
+        <td>Mon, Dec. 20</td>
+        <td></td>
+        <td></td><td><font color=#800000>final project (report/code due)</font></td>
+      </tr>
+
+    </tbody>
+</table>
+<!-- End schedule -->
+                    </font>
+                  </div>
+              </center>
+            </section>
+            <br><br>
+						<section id="staff" class="main">
+              <center>
+                <header class="major">
+                  <h2>Staff &amp; Office Hours</h2>
+							  </header>
+                <!-- <font size = "+1"> -->
+                  <br>
+                  <!-- <style> -->
+                  <!--   .vline -->
+                  <!--   { -->
+                  <!--       border-left: 0px dashed gray; -->
+                  <!--       height: 175px; -->
+                  <!--   }  -->
+                  <!-- </style> -->
+                  <!-- <style>a { text-decoration: underline }</style> -->
+                  <style>
+                    a.stafflink {
+                        text-decoration: none;
+                        decoration: none;
+		                    border-bottom: none; 
+                    }
+                  </style>
+                  <div class="table-wrapper" style="width:90%">
+                    <table>
+                      <tbody><tr>
+                        <td>
+                          <div class="staff">
+                            <div><img src="src/donglai.png" class="staff"></div>
+                            <div><b><a href="https://donglaiw.github.io/" class="stafflink">Donglai Wei</a></b></div>
+                            <div><strong>Instructor</strong></div>
+                          </div>
+                        </td>                        
+                        <td><div style="width:17pt"></div></td>
+                        <td>
+                          <div class="staff">
+                            <div><img src="src/david.png" class="staff"></div>
+                            <div><b><a href="https://new.d-shen.xyz/" class="stafflink">David Shen</a></b></div>
+                            <div>TA</div>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="staff">
+                            <div><img src="src/yufan.png" class="staff"></div>
+                            <div><b><a href="" class="stafflink">Yufan Yang</a></b></div>
+                            <div>TA</div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody></table>
+                </div>
+              </center>
+
+              <center>
+                <!-- <br><b>Office Hours</b><br><br> -->                
+               <div class="table-wrapper" style="width:90%">
+                   <table class="alt" style="width:60%">
+                     <thead>
+                       <tr>
+                         <th style="text-align:center">Name</th>
+                         <th style="text-align:center">Office hours</th>
+                     </tr></thead>
+                     <tr class="alternate"><td>Donglai Wei  </td><td>(W) 11 am-noon, (F) 3-4 pm @ S276/CS student lounge</td></tr> 
+                     <tr class="alternate"><td>David Shen          </td><td>(Tue) 3-4 pm, (Thu) 6-7 pm @ Fulton 160</td></tr>
+                     <tr class="alternate"><td>Yufan Yang          </td><td>(Tue) 10-11 am, (Thu) 3-4 pm @ Fulton 160</td></tr>
+                   </tbody></table>
+                    <div align="left" style="padding-left: 4%; margin-top: -30px">
+                    <ul>
+                        <li>Office hours will take place in person (or Zoom if needed).</li>
+                        <li>Donglai will hold additional one-on-one AMA office hours M/W 4-5pm <a href="https://calendly.com/donglai-wei/open-office-hour">(15-min by appointment)</a></li>
+                    </ul>
+                    </div>
+                 <br><br>
+               </div>
+			</center></section>
+            
+            <!-- Introduction -->
+            <section id="syllabus" class="main">
+              <center>
+                <header class="major">
+                  <h2>Course information (aka. How to do well)</h2>
+                </header>
+                <div class="spotlight" style="width: 90%; text-align: left">
+                    <div class="content">
+
+
+                    <p><b>1. Attend the course with preparation</b></p>
+                      <div style="padding-left: 4%; margin-top: -35px">
+                      <ul>
+                          <li><b>Lectures (MW):</b> Do the reading before the lecture.</li>
+                          <li><b>Labs (F):</b> Bring your laptop.</li>
+                            <li><b>Textbook:</b> We'll be using the following two online books:
+                            <ul style="margin-left: 30px;margin-top: 0px">
+                              <li>[Chap. 1-3, 5-9] Szeliski. <i>Computer Vision: Algorithms and Applications, 2nd edition draft</i> <a href="http://szeliski.org/Book/">(available for free online)</a></li>
+                              <li>[Chap. 1-9, 11] Goodfellow, Bengio, Courville. <i>Deep Learning</i>. <a href="http://www.deeplearningbook.org/"> (available for free online)</a></li>
+                            </ul>
+                            </li>
+                      </ul>
+                      </div>
+                     <br>
+
+
+                    <p><b>2. Ask for help</b> (besides office hours)
+                      <div style="padding-left: 4%; margin-top: -35px">
+                        <ul>
+                            <li><b>Dropbox:</b> The lecture pdfs will be uploaded to Dropbox (follow the link) and you can ask questions there by making comments on the slides directly. 
+                                <li><b><a href="https://docs.google.com/document/d/1unjJFWahHPLU6w84o-HWX4htjH9wdJrkWdMaX6R9d-E/edit">Discord:</a></b> For labs/psets/final projects, we will create dedicated channels for you to ask public questions. 
+                                If you cannot make your post public (e.g., due to
+                    revealing problem set solutions), please create a room with instructors and TAs separately,
+                    or come to office
+                    hours. Please note, however, that the course staff
+                    cannot provide help debugging code, and there is
+                    no guarantee that they'll be able to answer
+                    last-minute homework questions before the
+                    deadline. We also appreciate it when you respond
+                    to questions from other students! If you have an
+                    important question that you would prefer to discuss
+                    over email, you may email the course staff, 
+                    or you can contact the instructor by email
+                    directly.</li>
+                    <li><b>Support:</b> The <a href="https://www.bc.edu/bc-web/offices/student-affairs/sites/counseling.html">university counseling services center</a> provides
+                     a variety of programs and activities.
+                    </li>
+                    <li>
+                        <b>Accommodations for students with disabilities:</b>
+                        If you are a student with a documented disability seeking reasonable accommodations in this course, please contact Kathy Duggan, (617) 552-8093, <a href="mailto:dugganka@bc.edu">dugganka@bc.edu</a>, at the Connors Family Learning Center regarding learning disabilities and ADHD, or Rory Stein, (617) 552-3470, <a href="mailto:steinr@bc.edu">steinr@bc.edu</a>, in the Disability Services Office regarding all other types of disabilities, including temporary disabilities. Advance notice and appropriate documentation are required for accommodations.
+                        </li>
+
+                        </ul>
+                    </div>
+                    <br/>
+
+                   
+
+                    <b>3. Submit Pset/Lab in time on Canvas</b>
+
+                      <div style="padding-left: 4%; margin-top: 0px">
+                      Grades will be computed as follows, with all homeworks equally weighted:
+                      <table style="width:40%; padding: 0 0 0 0; line-height: 8pt; margin-top: 5px">
+                        <tbody><tr class="alternate" style="border: 1px solid #dddddd"><td>Pset       </td><td align="left">70 points
+                        </td></tr><tr class="alternate" style="border: 1px solid #dddddd"><td>Final project  </td><td align="left">30 points
+                        </td></tr><tr class="alternate" style="border: 1px solid #dddddd"><td>Lab  </td><td align="left">0.5 point extra credit each
+                      </td></tr></tbody></table>
+                      <ul>
+                          <li><b>Pset:</b> There will be a problem 
+                    set <i>approximately every week</i>. All
+                    programming assignments are to be completed in
+                    Python on Colab, using the starter code that we
+                    provide. Assignments will always be due at
+                    <b><font color=#800000>midnight (11:59 pm) on the due date</font></b>. The
+                    assignments will all be worth approximately equal
+                    amounts. You
+                    may be asked to annotate your pdf (e.g. by selecting
+                    your solution to each problem).</li>
+                          <li><b>Final project:</b> <a href="https://docs.google.com/document/d/1Ii08EZK-BtAc4QvtNgWSHsi8cW1kUDJfmUltuvxVkH8/edit#">(guideline)</a> In lieu of a final exam,
+                    we'll have final project. This project will be
+                    completed in small groups during the last weeks of
+                    the class. The direction for this project is
+                    open-ended: you can either choose from a list of
+                    project ideas that we distribute, or you can
+                    propose a topic of your own. A short project
+                    proposal will be due approximately halfway through
+                    the course.  During the final exam period, you'll
+                    turn in a final report and give a short
+                    presentation. You may use an ongoing research work
+                    for your final project, as long it meets the
+                    requirements.</li>                      
+                        <li><b>Lab:</b> 
+                            <strike>The materials are expected to be finished in class. 
+                            If you submit the correctly finished Lab file before the <b><font color=#800000>next Fri class (10 am)</font></b>, you will receive 0.5 point per lab as the extra credit to your final grade. No late policy for the lab.</strike>
+                            You will receive 0.5 point per lab as the extra credit to your final grade, if your results are correct. Deadline is <b><font color=#800000>Dec 13th 11:59 pm</font></b>.
+                        </li>
+                            <li><b>Late policy:</b> You'll have <b> 10 late
+                        days</b> to use over the course of the
+                        semester. Each time you use one, you may
+                        submit a homework assignment one day late
+                        without penalty (weekends don't count as late days). You
+                        do <i>not</i> need to notify us when you use a
+                        late day; we'll deduct it automatically. If
+                        you run out of late days and still submit
+                        late, your assignment will be penalized at a
+                        rate of 10% per day until 30% left <b><font color=#800000>(before Dec 13th 11:59 pm)</font></b>. If you edit your
+                        assignment after the deadline, this will count
+                        as a late submission, and we'll use the
+                        revision time as the date of submission (after
+                        a short grace period of a few minutes). We
+                        will not provide additional late time, except
+                        under exceptional circumstances, and for these
+                        we'll require documentation (e.g., a doctor's
+                        note). Please note that the late days are
+                        provided to help you deal with minor setbacks,
+                        such as routine illness or injury, paper
+                        deadlines, interviews, and computer problems;
+                        these do not generally qualify for an
+                        additional extension.</li>
+                    <li><b>Academic integrity:</b> While you are
+                       encouraged to discuss homework
+                      assignments with other students, <i>your
+                        programming work must be completed
+                        individually</i>. You may not search for
+                      solutions online, or to use existing
+                      implementations of the algorithms in the
+                      assignments. Thus it is acceptable to learn from another student the general idea for writing program code to perform a particular task, or the technique for solving a mathematical problem, but unacceptable for two students to prepare their assignments together and submit what are essentially two copies of identical work. If you have any uncertainty about the application of this policy, please check with me.
+                      Failure to comply with these guidelines 
+                      will be considered a violation of the 
+                      <a href="https://www.bc.edu/bc-web/academics/sites/university-catalog/policies-procedures.html#academic_integrity_policies">University policies on academic integrity</a>. 
+                      Please make sure that you are familiar with these policies.
+                    </li>
+                    </ul>
+                    </div>
+                    
+                    <br/>
+                     
+                
+                <b>Acknowledgements:</b> This course draws
+                       heavily from MIT's <a href="http://6.869.csail.mit.edu/fa14/">6.869:
+                       Advances in Computer Vision</a> by Antonio
+                       Torralba, William Freeman, and Phillip
+                       Isola. It also includes lecture slides from
+                       other researchers, including <a href="https://andrewowens.com/">Andrew Owens
+                       </a>, <a href="http://slazebni.cs.illinois.edu/">Svetlana
+                       Lazebnik</a>, <a href="https://people.eecs.berkeley.edu/~efros/">Alexei
+                       Efros</a>,  <a href="https://profiles.stanford.edu/fei-fei-li">Fei-fei
+                       Li</a>,  <a href="https://www.cs.columbia.edu/~vondrick/">Carl
+                       Vondrick</a>,  <a href="https://web.eecs.umich.edu/~fouhey/">David
+                       Fouhey</a>, <a href="https://web.eecs.umich.edu/~justincj/">Justin Johnson</a>, and <a href="http://www.cs.cornell.edu/~snavely">Noah
+                       Snavely</a> (please see acknowledgments in the
+                   lecture slides). Special thanks to <a href="https://people.csail.mit.edu/celiu/">Ce Liu</a> for the insightful and generous advice.
+                    </div>
+              </div></center>
+						</section>
+
+          <!-- First week -->
+            <section id="firstweek" class="main">
+              <center>
+                <header class="major">
+                  <h2>Selected Q&A for the First Week</h2>
+				</header>
+                <div class="spotlight" style="width: 90%; text-align: left">
+                    <div class="content">
+                    <div style="margin-top: -30px">
+                        <center>
+                        Check out the <a href="https://docs.google.com/document/d/1q1odX6Xm2H9RI0KLpJa9t04_BU1DeG8RtzHikpCs3uA/edit">full list</a>! Welcome to drop new questions there. <br/><br/>
+                        </center>
+
+                        <i>Q. Err, I learned those prerequisites before, but the memory is blurry now. Do you have any refresher materials?</i><br/>
+                        A. <a href="https://www.youtube.com/playlist?list=PL0-GT3co4r2y2YErbmuJw2L5tW4Ew2O5B">Linear algebra (Essence, Chap 1-4)</a>,
+                        <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr">Calculus (Essence, Chap 1, 3-4, 8-9)</a>,
+                        <a href="https://colab.research.google.com/github/cs231n/cs231n.github.io/blob/master/python-colab.ipynb">Python ("Basics of Python" section)</a>. 
+                        <br/>
+
+                        <i>Q. Hmm, the refreshers don't look too hard, but I'm still not sure if I can handle the course? </i><br/>
+                        A. Pset 1 and Lab 1 will be out on Mon (check out <a href="https://cs231n.github.io/setup-instructions/#working-remotely-on-google-colaboratory">Colab tutorial</a>) and your maths/coding should be good if you can tackle them. It's also good if you can struggle through them to show your learning ability, which in the end is the goal of education.<br/>
+
+                        <i>Q. Wow, the course seems really intense!</i><br/>
+                        A. Computer vision (AI) is super cool, but there is <a href="https://en.wikipedia.org/wiki/No_free_lunch_theorem">no free lunch</a>. The course materials focus on core concepts and learning-through-coding, so that you can later be quick-to-understand and ready-to-code about AI in your career.<br/>
+                        <i>Q. What, final project from day one?!?</i><br/>
+                        A. Relax, nothing serious is due until Oct. 18. We hope to get the best out of you by kindling your passion to apply computer vision to areas you care about dearly. As an intro course, we will only cover the basics for the exciting real-world applications (week 7-12). The final project is an effective way to dive deep into one topic and gain the full-cycle research experience.<br/>
+                        <hr>
+                        <div style="margin-top: -30px">
+                            <b>We are here to assist you in becoming the better version of yourselves!</b> Check out <a href="#staff">office hours</a> and <a href="https://docs.google.com/document/d/1unjJFWahHPLU6w84o-HWX4htjH9wdJrkWdMaX6R9d-E/edit">Discord</a>!
+                        </div>
+                    </div>
+                    </p>         
+                    </div>
+                </div>
+                </center>
+            </section>
+           
+   				<!-- Footer -->
+					  <footer id="footer">
+              <p class="copyright"><font size="-1">© 2021
+              Boston College. Website based on a template
+              from <a href="https://html5up.net/">HTML5
+                  Up</a> and Andrew Owen's <a href="https://www.eecs.umich.edu/courses/eecs442-ahowens/fa20/">course</a> at U. Michigan. 
+					</font></p></footer><font size="-1">
+			</font></section></div><font size="-1">
+
+			<script src="src/jquery.min.js"></script>
+			<script src="src/jquery.scrollex.min.js"></script>
+			<script src="src/jquery.scrolly.min.js"></script>
+			<script src="src/skel.min.js"></script>
+			<script src="src/util.js"></script>
+
+</font></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
