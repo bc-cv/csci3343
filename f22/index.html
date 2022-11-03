@@ -450,7 +450,7 @@
       </tr>
 
       <tr class="alternate">
-        <td rowspan=2 style="vertical-align:middle;text-align:center;">Video Understanding<br/>(Week 10)</td>
+        <td rowspan=3 style="vertical-align:middle;text-align:center;">Video Understanding<br/>(Week 10-11)</td>
         <td>Tue, Nov. 1</td>
         <td class="topic"><a href="https://www.dropbox.com/s/b46489l216nq9tp/lec18-video-motion-prediction.key.pdf?dl=0">Lec. 18: Motion</a>
           <div class="subtopic">
@@ -491,34 +491,37 @@
       </tr>
 
       <tr class="alternate">
-        <td rowspan=2 style="vertical-align:middle;text-align:center;">3D Understanding<br/>(Week 11-14)</td>
         <td>Tue, Nov. 8</td>
-        <td class="topic"><a class="nope" href="">Lec. 20: Image Transformation</a>
+        <td class="topic"><a class="nope" href="https://www.dropbox.com/s/wb75g4i4n104rgt/lec19-video-track.pdf?dl=0">Lec. 20: Object Tracking</a>
           <div class="subtopic">
-              Homogeneous coordinate, homography</div>
+              Single-object tracking, Siamese NN
+              <br/>  Multi-object tracking, Graph NN
+          </div>
         </td>
         <td>
-            Target domain: transformation matrix
+            Target domain: temporally-linked bounding boxes
           <ul class="materials">
-              <li>[R] CV: 2.1, 3.6.1</a></li>
+              <li>SOT: <a href="http://3dvision.princeton.edu/projects/2013/tracking/paper.pdf">Benchmark</a>, <a href="https://arxiv.org/abs/1604.01802">Held et al.</a>, <a href="https://arxiv.org/abs/1510.07945">Nam et al.</a></li>
+              <li>MOT: <a href="https://arxiv.org/pdf/1504.01942.pdf">Benchmark</a>, <a href="http://vision.cse.psu.edu/courses/Tracking/vlpr12/lzhang_cvpr08global.pdf">Zhang et al.</a>, <a href="https://arxiv.org/pdf/1912.07515.pdf">Brasó et al.</a></li>
           </ul>
         </td>
-        <td></td>
       </tr>
 
       <tr class="alternate">
+        <td style="vertical-align:middle;text-align:center;">3D Understanding<br/>(Week 11-14)</td>
         <td>Thu, Nov. 10</td>
-        <td class="topic"><a class="nope" href="">Lec. 21: Image Alignment</a>
+        <td class="topic"><a class="nope" href="">Lec. 21: Image Transformation and Alignment</a>
           <div class="subtopic">
+              Homogeneous coordinate, homography</br>
               Feature matching, RANSAC</div>
         </td>
         <td>
             Target domain: transformation matrix
           <ul class="materials">
+              <li>[R] CV: 2.1, 3.6.1</a></li>
               <li>[R] CV: 7.1</li>
           </ul>
         </td>
-
         <td>
             <font color=#800000>lab10 due</font><br/>
             ps5 out (stitching)
